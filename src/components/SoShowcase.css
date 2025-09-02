@@ -1,0 +1,71 @@
+/* src/components/SoShowcase.css */
+
+/* Outer section — keeps same centered container width as other sections */
+.so-showcase-section {
+  background: transparent;
+  padding: 24px 16px 40px;
+  box-sizing: border-box;
+}
+
+/* inner container aligned with your other components (same max-width) */
+.so-showcase-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* heading + subtitle */
+.so-showcase-heading {
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 900;
+  margin: 0 0 6px;
+  color: #163f92;
+}
+.so-showcase-heading span {
+  color: #0ea5ff;
+}
+
+.so-showcase-sub {
+  max-width: 900px;
+  margin: 6px auto 18px;
+  color: #5e727b;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+/* image wrapper with cyan border like screenshot
+   NOTE: added max-width to make the image slightly smaller on larger screens,
+   and centered it with margin:auto so it doesn't span full width. */
+.so-image-wrapper {
+  display: block;
+  width: 100%;
+  max-width: 760px; /* <-- controls how "thodi kam" size the image is on wide screens */
+  margin: 0 auto;   /* center the reduced-width wrapper */
+  padding: 10px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  border: 3px solid rgba(14,165,255,0.35);
+  background: linear-gradient(180deg, rgba(14,165,255,0.03), rgba(14,165,255,0.02));
+  box-shadow: 0 8px 26px rgba(14,165,255,0.06);
+  overflow: hidden;
+}
+
+/* image fills wrapper without causing horizontal overflow */
+.so-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+  max-width: 100%;
+  /* optional: limit height so extremely tall images don't dominate the layout */
+  max-height: 520px;
+}
+
+/* small screens */
+@media (max-width: 520px) {
+  .so-showcase-section { padding: 18px 12px 26px; }
+  .so-image-wrapper { padding: 8px; border-width: 2px; max-width: 100%; }
+  .so-showcase-heading { font-size: 1.3rem; }
+  .so-image { max-height: none; } /* let image be natural height on small screens */
+}

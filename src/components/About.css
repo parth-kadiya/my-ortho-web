@@ -1,0 +1,187 @@
+/* src/components/About.css */
+
+:root{
+  --about-max: 1280px;
+  --accent-1: #0ea5ff;
+  --accent-2: #00b7ff;
+  --muted: #586676;
+  --card-bg: #ffffff;
+  --card-border: rgba(34,60,80,0.06);
+  --card-shadow: 0 8px 26px rgba(16,96,160,0.06);
+}
+
+/* section container */
+.about-section{
+  background: linear-gradient(180deg, #f6fbff 0%, #ffffff 100%);
+  color: #0f1724;
+  padding: 64px 20px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.about-inner{
+  max-width: var(--about-max);
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* pill badge */
+.about-badge{
+  display: inline-block;
+  background: rgba(14,165,255,0.08);
+  color: var(--accent-2);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid rgba(14,165,255,0.12);
+  margin-bottom: 16px;
+}
+
+/* main title */
+.about-title{
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  margin: 6px 0 12px;
+  line-height: 1.03;
+  color: #0b2336;
+}
+
+.about-title span{
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* subtitle text */
+.about-sub{
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* small underline accent under heading */
+.about-underline{
+  width: 56px;
+  height: 6px;
+  margin: 18px auto 28px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  box-shadow: 0 6px 18px rgba(14,165,255,0.12);
+}
+
+/* cards grid */
+.about-cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+/* individual card */
+.about-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,251,255,0.98));
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: visible;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+/* small top accent rounded border (thin) */
+.card-top-accent{
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  right: 12px;
+  height: 6px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  box-shadow: 0 6px 18px rgba(14,165,255,0.06);
+}
+
+/* card content padding */
+.card-body{
+  padding: 26px 22px 28px;
+  text-align: left;
+}
+
+/* icon container */
+.card-icon-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+.card-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(14,165,255,0.06), rgba(0,183,255,0.03));
+  border: 1px solid rgba(14,165,255,0.08);
+  color: var(--accent-2);
+  box-shadow: 0 4px 14px rgba(14,165,255,0.04) inset;
+}
+
+/* card title & text */
+.card-title{
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 6px 0 8px;
+  color: #072033;
+}
+
+.card-text{
+  font-size: 0.95rem;
+  color: #465b66;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+/* learn more link */
+.card-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--accent-2);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: transform 160ms ease;
+}
+.card-link .card-arrow{
+  font-size: 1.05rem;
+  transform: translateX(0);
+  transition: transform 160ms ease;
+}
+.card-link:hover .card-arrow{ transform: translateX(6px); }
+.about-card:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(14,165,255,0.08); }
+
+/* Responsive */
+@media (max-width: 1000px){
+  .about-cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px){
+  .about-inner{ padding: 0 12px; }
+  .about-cards{
+    grid-template-columns: 1fr;
+  }
+  .card-body{ padding: 20px; }
+  .card-icon{ width: 44px; height: 44px; }
+  .about-section{ padding: 40px 12px; }
+}

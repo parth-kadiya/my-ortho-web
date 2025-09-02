@@ -1,0 +1,134 @@
+:root {
+  --header-height: 72px; /* thoda bada rakha for better logo fit */
+  --nav-gap: 18px;
+
+  /* nav colors */
+  --nav-color: #ffffff;
+  --nav-muted: rgba(255,255,255,0.85);
+  --nav-hover: #00b7ff;
+
+  /* CTA */
+  --cta-bg-1: #00d4c7;
+  --cta-bg-2: #00b7ff;
+  --cta-text: #ffffff;
+  --cta-border: rgba(255,255,255,0.06);
+}
+
+/* Sticky Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  box-sizing: border-box;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(6,18,30,0.98), rgba(10,22,34,0.98));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
+  padding: 0;
+}
+
+/* Header Layout */
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;  /* 👈 vertical centering */
+  justify-content: space-between;
+  padding: 0 20px;
+  gap: 12px;
+}
+
+/* Brand Logo */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+}
+.brand-logo {
+  max-height: 120px;  /* 👈 fit inside header */
+  width: auto;
+  display: block;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Navigation */
+.header-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--nav-gap);
+  align-items: center;
+}
+.header-nav a {
+  color: var(--nav-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 160ms, color 160ms, transform 120ms;
+}
+.header-nav a:hover,
+.header-nav a:focus {
+  color: var(--nav-hover);
+  background: rgba(255,255,255,0.02);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* Right Section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* CTA Button */
+.cta {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--cta-text);
+  background: linear-gradient(90deg, var(--cta-bg-1) 0%, var(--cta-bg-2) 100%);
+  box-shadow: 0 4px 14px rgba(0,183,255,0.12), 0 1px 0 rgba(255,255,255,0.03) inset;
+  border: 1px solid var(--cta-border);
+  transition: transform 140ms, box-shadow 140ms, background 140ms, color 120ms;
+}
+.cta:hover,
+.cta:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,183,255,0.14);
+  color: var(--cta-text);
+  background: linear-gradient(90deg, #00cfc0 0%, #00aef2 100%);
+  outline: none;
+}
+
+/* Mobile: Hide nav */
+@media (max-width: 980px) {
+  .header-nav { display: none; }
+}
+
+/* CTA Button Text should stay in one line */
+.cta {
+  white-space: nowrap; /* 👈 text kabhi wrap nahi hoga */
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .cta {
+    font-size: 0.85rem;   /* thoda chhota text */
+    padding: 8px 12px;    /* chhota padding */
+  }
+}

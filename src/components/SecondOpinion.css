@@ -1,0 +1,281 @@
+/* Section + inner wrapper */
+.so-section {
+  background: transparent;
+  padding: 48px 0;
+  color: #0b2440;
+}
+
+.so-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* badge/title/sub */
+.so-badge {
+  display: inline-block;
+  background: linear-gradient(90deg,#e6f8ff,#dff3ff);
+  color: #0466b3;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 18px rgba(3,78,162,0.06);
+}
+
+.so-title {
+  font-size: 1.6rem;
+  margin: 8px 0 6px;
+  color: #06203a;
+  font-weight: 800;
+}
+
+.so-sub {
+  color: #516d86;
+  margin-bottom: 12px;
+  max-width: 780px;
+  line-height: 1.5;
+}
+
+.so-underline {
+  width: 60px;
+  height: 6px;
+  background: linear-gradient(90deg,#00a8ff,#2db7ff);
+  border-radius: 999px;
+  margin: 16px 0 22px;
+  box-shadow: 0 6px 16px rgba(45,183,255,0.12);
+}
+
+/* tabs */
+.so-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+.so-tab {
+  background: #f6fbff;
+  color: #064470;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(6,66,112,0.06);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(2,60,120,0.03);
+}
+
+.so-tab.active {
+  background: linear-gradient(90deg,#00a8ff,#2db7ff);
+  color: white;
+  box-shadow: 0 10px 30px rgba(45,183,255,0.12);
+}
+
+/* grid layout left/right */
+.so-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* left column cards */
+.so-left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* info card */
+.info-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(6,40,80,0.04);
+  border: 1px solid rgba(6,40,80,0.03);
+}
+
+.info-card-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(180deg,#eaf7ff,#f4fbff);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(2,60,120,0.04);
+  color: #2b8bd6;
+  flex: 0 0 44px;
+}
+
+/* react-icons sizing inside the .info-icon */
+.info-icon .info-icon-svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  vertical-align: middle;
+  color: inherit;
+}
+
+/* small check icon for bullets */
+.info-bullet-icon {
+  width: 14px;
+  height: 14px;
+  display: block;
+  flex: 0 0 14px;
+  vertical-align: middle;
+  color: #0b6fa4;
+}
+
+/* align bullet items */
+.info-bullets li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #3b556a;
+  font-weight: 700;
+}
+
+/* title/text/note */
+.info-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0c2a3e;
+  margin: 0;
+}
+
+.info-text {
+  color: #516d86;
+  line-height: 1.6;
+  margin: 8px 0 12px;
+}
+
+.info-note {
+  background: #f1fbff;
+  border-left: 4px solid #bfeaff;
+  color: #256e9e;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.info-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+/* right column (decorative) */
+.so-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 320px;
+}
+
+/* decorative wrap that holds rings, dots and button */
+.decor-wrap {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* large soft rings */
+.decor-ring {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(45,183,255,0.18), rgba(45,183,255,0.03) 45%, transparent 60%);
+  filter: blur(14px);
+  transform: translateZ(0);
+  opacity: 0.95;
+}
+
+.decor-ring.small {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle at center, rgba(0,168,255,0.14), rgba(0,168,255,0.02) 45%, transparent 60%);
+  filter: blur(10px);
+  opacity: 0.9;
+}
+
+/* center circular button for bone icon */
+.decor-btn {
+  position: relative;
+  z-index: 6;
+  width: 68px;
+  height: 68px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg,#00aaff,#1fb7ff);
+  border: none;
+  outline: none;
+  cursor: default;
+  box-shadow: 0 12px 30px rgba(45,183,255,0.18), inset 0 -6px 12px rgba(0,0,0,0.06);
+}
+
+/* targetable id for special overrides */
+#decor-bone-btn .decor-bone-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  transform: translateY(-1px);
+  color: white;
+}
+
+/* small decorative dots */
+.dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(45,183,255,0.85);
+  box-shadow: 0 8px 18px rgba(45,183,255,0.12);
+  z-index: 3;
+}
+
+.dot-1 { top: 18%; left: 64%; transform: translate(-50%, -50%); opacity: 0.9; width: 6px; height: 6px; }
+.dot-2 { bottom: 14%; right: 22%; transform: translate(50%, 50%); opacity: 0.8; width: 5px; height: 5px; }
+.dot-3 { top: 58%; right: 6%; transform: translate(50%, -50%); opacity: 0.7; width: 6px; height: 6px; }
+
+/* Responsive adjustments */
+@media (max-width: 980px) {
+  .so-grid {
+    grid-template-columns: 1fr;
+  }
+  .so-right {
+    margin-top: 12px;
+    min-height: 0;
+  }
+  .decor-wrap {
+    width: 200px;
+    height: 200px;
+  }
+  .decor-ring { width: 170px; height: 170px; }
+  .decor-ring.small { width: 110px; height: 110px; }
+  .decor-btn { width: 60px; height: 60px; }
+}
+
+@media (max-width: 520px) {
+  .so-title { font-size: 1.2rem; }
+  .decor-wrap { display: none; } /* hide heavy decoration on very small screens */
+}
